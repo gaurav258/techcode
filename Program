@@ -3,7 +3,6 @@ void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
 pinMode(2,OUTPUT);
-pinMode(3,OUTPUT);
 pinMode(4,OUTPUT);
 }
 
@@ -20,24 +19,21 @@ delay(1000);
 
 
 
-if (temp>=25)
+if (temp>=30)
   {
     Serial.print("HIGH TEMPRATURE");
-    digitalWrite(3,HIGH);
     digitalWrite(4,HIGH);
     digitalWrite(2,LOW);
   }
-  else if (temp>=23&&temp<25){
+  else if (temp>=25&&temp<30){
     
     Serial.print("NORMAL TEMPRATURE");
-    digitalWrite(3,LOW);
-    digitalWrite(4,HIGH);
-    digitalWrite(2,HIGH);
+    digitalWrite(4,LOW);
+    digitalWrite(2,LOW);
   }
   else{
     
     Serial.print("LOW TEMPRATURE");
-    digitalWrite(3,HIGH);
     digitalWrite(4,LOW);
     digitalWrite(2,HIGH);
   }
